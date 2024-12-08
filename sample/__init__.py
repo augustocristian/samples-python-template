@@ -1,1 +1,1 @@
-from .core import hmm
+from .core import get_type_triangle
