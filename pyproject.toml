@@ -7,7 +7,7 @@ name = "samples-python-template"
 version = "2024.0.0"
 dependencies = [
     "setuptools==78.1.0",
-    "pytest==8.3.4",
+    "pytest==8.3.5",
     "pytest-cov==6.0.0",
     "flake8== 7.2.0",
 ]
