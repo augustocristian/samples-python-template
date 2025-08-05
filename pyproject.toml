@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "samples-python-template"
 version = "2024.0.0"
 dependencies = [
-    "setuptools==78.1.0",
+    "setuptools==80.9.0",
     "pytest==8.4.1",
     "pytest-cov==6.0.0",
     "flake8== 7.3.0",
