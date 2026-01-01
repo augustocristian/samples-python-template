@@ -53,7 +53,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Download coverage reports
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
       - name: SonarQubeScan
         uses: SonarSource/sonarqube-scan-action@fd88b7d7ccbaefd23d8f36f73b59db7a3d246602 # V.6.0 lastest 05/10/2025
         env:
