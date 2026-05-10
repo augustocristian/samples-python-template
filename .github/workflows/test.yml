@@ -20,20 +20,19 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+      - name: Install Poetry
+        uses: snok/install-poetry@76e04a911780d5b312d89783f7b1cd627778900a # v1
+        with:
+          version: "2.4.0"
+          virtualenvs-in-project: true
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install .
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        run: poetry install --no-interaction
       - name: Lint with flake8
         run: |
-          # stop the build if there are Python syntax errors or undefined names
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+          poetry run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          poetry run flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test with pytest
-        run: |
-          pytest
+        run: poetry run pytest
       - name: Store coverage report
         uses: actions/upload-artifact@v7
         with:
@@ -55,6 +54,6 @@ jobs:
       - name: Download coverage reports
         uses: actions/download-artifact@v8
       - name: SonarQubeScan
-        uses: SonarSource/sonarqube-scan-action@a31c9398be7ace6bbfaf30c0bd5d415f843d45e9 # V.6.0 lastest 05/10/2025
+        uses: SonarSource/sonarqube-scan-action@59db25f34e16620e48ab4bb9e4a5dce155cb5432 # V.6.0 lastest 05/10/2025
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
