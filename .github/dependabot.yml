@@ -5,9 +5,13 @@ updates:
     schedule:
       interval: monthly
     open-pull-requests-limit: 20
+    assignees:
+     - "augustocristian"
 
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
       interval: monthly
     open-pull-requests-limit: 20
+    assignees:
+     - "augustocristian"
