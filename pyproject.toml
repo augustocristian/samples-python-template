@@ -5,6 +5,10 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 packages = [{ include = "sample" }]
 
+[tool.poetry.group.docs.dependencies]
+sphinx = "^9.1.0"
+furo = "^2025.12.19"
+
 [project]
 name = "samples-python-template"
 version = "2026.07.1"
@@ -30,7 +34,7 @@ license = { file = "LICENSE" }
 
 [project.urls]
 Homepage = "https://github.com/augustocristian/samples-python-template"
-Documentation = "https://readthedocs.org"
+Documentation = "https://augustocristian.github.io/samples-python-template/"
 Repository = "https://github.com/augustocristian/samples-python-template"
 "Bug Tracker" = "https://github.com/augustocristian/samples-python-template/issues"
 Changelog = "https://github.com/augustocristian/samples-python-template/blob/master/CHANGELOG.md"
