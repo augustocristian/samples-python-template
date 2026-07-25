@@ -7,7 +7,7 @@ packages = [{ include = "sample" }]
 
 [project]
 name = "samples-python-template"
-version = "2026.07.0"
+version = "2026.07.1"
 dependencies = [
     "setuptools==82.0.1",
     "pytest==9.0.3",

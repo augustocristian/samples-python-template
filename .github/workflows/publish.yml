@@ -22,10 +22,14 @@ jobs:
         run: |
           TAG_VERSION="${GITHUB_REF_NAME#v}"
           PROJECT_VERSION="$(poetry version --short)"
-          if [ "$TAG_VERSION" != "$PROJECT_VERSION" ]; then
-            echo "Release tag ($GITHUB_REF_NAME) does not match pyproject.toml version ($PROJECT_VERSION)"
-            exit 1
-          fi
+          python3 -c "
+          import sys
+          norm = lambda v: '.'.join(str(int(p)) if p.isdigit() else p for p in v.split('.'))
+          tag, project = '$TAG_VERSION', '$PROJECT_VERSION'
+          if norm(tag) != norm(project):
+              print(f'Release tag ({tag}) does not match pyproject.toml version ({project})')
+              sys.exit(1)
+          "
       - name: Build package
         run: poetry build
       - name: Store distribution artifacts
