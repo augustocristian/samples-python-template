@@ -23,6 +23,8 @@ jobs:
           version: "2.4.0"
       - name: Install dependencies
         run: poetry install --no-interaction --with docs
+        env:
+          POETRY_INSTALLER_ONLY_BINARY: ":all:" # only install pre-built wheels, never run a source dist's build/setup scripts
       - name: Build documentation
         run: poetry run sphinx-build -b html docs docs/_build/html -W --keep-going
       - name: Upload Pages artifact
