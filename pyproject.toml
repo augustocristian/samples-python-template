@@ -3,11 +3,11 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-package-mode = false
+packages = [{ include = "sample" }]
 
 [project]
 name = "samples-python-template"
-version = "2024.0.0"
+version = "2026.07.0"
 dependencies = [
     "setuptools==82.0.1",
     "pytest==9.0.3",
