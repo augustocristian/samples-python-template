@@ -26,6 +26,8 @@ jobs:
           virtualenvs-in-project: true
       - name: Install dependencies
         run: poetry install --no-interaction
+        env:
+          POETRY_INSTALLER_ONLY_BINARY: ":all:" # only install pre-built wheels, never run a source dist's build/setup scripts
       - name: Lint with flake8
         run: |
           poetry run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
