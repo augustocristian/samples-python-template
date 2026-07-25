@@ -5,13 +5,12 @@ on:
     branches:
       - 'main'
 
-permissions:
-  contents: read
-
 jobs:
   build:
     name: "Build Sphinx docs"
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v7
       - name: Set up Python 3.12
