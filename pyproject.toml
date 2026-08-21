@@ -30,7 +30,8 @@ maintainers = [
 
 description = "Python project template"
 readme = "README.md"
-license = { file = "LICENSE" }
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 
 [project.urls]
 Homepage = "https://github.com/augustocristian/samples-python-template"
